@@ -603,7 +603,7 @@ class Lexer(object):
         source = text_type(source)
         lines = source.splitlines()
         if self.keep_trailing_newline and source:
-            for newline in ('\r\n', '\r', '\n'):
+            for newline in ('\r\n', '\r', '\n', '\x85'):
                 if source.endswith(newline):
                     lines.append('')
                     break
